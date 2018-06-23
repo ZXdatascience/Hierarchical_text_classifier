@@ -34,25 +34,3 @@ if __name__ == '__main__':
     print(evaluate([["Top/News/Sports", "Top/News/Sports/Soccer", "Top/News/Sports/Baseball"]], \
                             [['Top/News/Politics', "Top/News/Sports/Baseball"]], 4))
 
-    with open('test_result_1987_2007.txt', 'r') as f:
-        predict = f.read()
-        predict = [t for t in predict.split('\n') if t]
-        predict_res = []
-        for sentence in predict:
-            s = sentence.split(' $ ')
-            new_s = [t for t in s if t]
-            predict_res.append(new_s)
-    with open('test_labels_1987_2007.txt', 'r') as f:
-        test = f.read()
-        test = [t for t in test.split('\n') if t]
-        test_res = []
-        for sentence in test:
-            s = sentence.split(' $ ')
-            new_s = [t for t in s if t]
-            test_res.append(new_s)
-
-    print(len(predict_res))
-    p, r, F1 = evaluate(test_res, predict_res, 6)
-    print(p)
-    print(r)
-    print(F1)

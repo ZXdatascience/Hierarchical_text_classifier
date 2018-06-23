@@ -5,6 +5,10 @@ from evaluate import evaluate
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import fetch_20newsgroups
 
+"""
+This is a example of using this API to train this hierarchical classifier.
+It can be used for text or other forms of data. The label should be in the hierarchical form like Top/News/Sports
+"""
 ############################
 # Variables
 ############################

@@ -1,7 +1,7 @@
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-# nlp = spacy.load('en', disable=['parser', 'tagger', 'ner'])
+nlp = spacy.load('en', disable=['parser', 'tagger', 'ner'])
 
 def preproc1(comment):
     """
@@ -22,5 +22,5 @@ def vectorize(text):
     :return:
     """
     vectorizer = TfidfVectorizer(stop_words='english')
-    matrix = vectorizer.fit_transform(t for t in text)
+    matrix = vectorizer.fit_transform(preproc1(t) for t in text)
     return vectorizer, matrix
